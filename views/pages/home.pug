@@ -1,0 +1,17 @@
+extends ../_includes/layout
+
+block variables
+  - var template = 'home'
+
+block content
+  .home
+    .home__wrapper
+      .home__titles
+        each collection, index in collections
+          .collections__titles_label=`${home.data.collection} ${index === 0 ? "One" : index === 1 ? "Two" : index === 2 ? "Three" : index === 3 ? "Four" : ""}`
+          .collections__titles_title=collection.data.title
+      .home__gallery
+        each media in home.data.gallery
+          figure.home__gallery__media
+            img.home__gallery__media__image(alt=media.image.alt src=media.image.url)
+          a(href=Link(home.data.collections))=home.data.button
