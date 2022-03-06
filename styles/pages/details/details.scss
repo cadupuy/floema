@@ -1,0 +1,139 @@
+.detail {
+  @extend %cover;
+  @extend %center;
+  background-color: $color-quicksand;
+  color: $color-white;
+
+  @include media('<phone') {
+    height: auto;
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+
+    @include media('<phone') {
+      display: block;
+      width: 66.1rem;
+      margin: auto;
+      padding-top: 31.5rem;
+    }
+  }
+
+  &__media {
+    width: 55.4rem;
+    height: 78.2rem;
+    position: relative;
+
+    @include media('<phone') {
+      width: 100%;
+      margin: 0 auto 7.8rem;
+      height: 93.4rem;
+    }
+  }
+
+  &__media__image {
+    @extend %cover;
+    object-fit: cover;
+  }
+
+  &__information {
+    padding-left: 8.2rem;
+
+    @include media('<phone') {
+      padding-left: 0;
+    }
+  }
+
+  &__information__collection {
+    @extend %description-12;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+  }
+
+  &__information__title {
+    @extend %title-120;
+    max-width: 60rem;
+  }
+
+  &__information__content {
+    padding-left: 18rem;
+
+    @include media('<phone') {
+      padding-left: 0;
+    }
+  }
+
+  &__information__highlights {
+    margin-top: 6rem;
+  }
+
+  &__information__highlight {
+    align-items: center;
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
+  }
+
+  &__information__highlight__text {
+    @extend %description-16;
+    letter-spacing: 0.03rem;
+  }
+
+  &__information__highlight__icon {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    margin-right: 3.75rem;
+  }
+
+  &__information__list {
+    margin-top: 4rem;
+  }
+
+  &__information__item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
+  }
+
+  &__information__item__title {
+    @extend %description-12;
+    width: 10rem;
+    padding-right: 2.5rem;
+  }
+
+  &__information__item__description {
+    @extend %description-16;
+    max-width: 44rem;
+    letter-spacing: 0.03rem;
+  }
+
+  &__information__link {
+    @extend %title-30;
+    display: inline-block;
+    margin-top: 3rem;
+  }
+
+  &__button {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12.4rem;
+    bottom: 5rem;
+    z-index: 2;
+  }
+
+  &__button__icon {
+    @extend %cover;
+  }
+}

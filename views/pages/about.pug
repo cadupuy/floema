@@ -13,14 +13,15 @@ block content
               img.about__gallery__media__image(alt=media.image.alt src=media.image.url)
       each section in about.data.body
         if section.slice_type === 'title'
-          h2.about__title=section.primary.text
+          h2.about__title!=section.primary.text.replace(/\n/g, '<br>')
 
         if section.slice_type === 'content'
-          section.about__content
+          section.about__content(class=`${section.primary.type === "Left" ? "about__content--keft" : "about__content--right"}`)
             .about__content__wrapper
-              p.about__content__label=section.primary.label
+              .about__content__box
+                p.about__content__label=section.primary.label
 
-              .about__content__description!=PrismicH.asHTML(section.primary.description)
+                .about__content__description!=PrismicH.asHTML(section.primary.description)
 
               figure.about__content__media
                 img.about__content__media__image(alt=section.primary.image.alt src=section.primary.image.url)
@@ -29,10 +30,12 @@ block content
             .about__highlight__wrapper
               if section.primary.label
                 p.about__highlight__label=section.primary.label
-              h3.about__highlight__title=section.primary.title
-              each media in section.items
-                figure.about__highlight__media
-                  img.about__highlight__media__image(alt=media.image.alt src=media.image.url)
+              h3.about__highlight__title=section.primary.title1
+
+              .about__highlight__medias
+                each media in section.items
+                  figure.about__highlight__media
+                    img.about__highlight__media__image(alt=media.image.alt src=media.image.url)
 
           if section.slice_type === 'gallery'
             section.about__gallery

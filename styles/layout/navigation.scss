@@ -1,0 +1,32 @@
+.navigation {
+  @extend %cover;
+  color: $color-quarter-spanish-white;
+  // z-index: z('navigation');
+  z-index: 4;
+
+  &__link {
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+    width: 12.8rem;
+    font-size: 0;
+    height: 2rem;
+  }
+
+  &__link__icon {
+    display: block;
+  }
+
+  &__list {
+  }
+
+  &__list__item {
+    position: absolute;
+    right: 4rem;
+    top: 4rem;
+  }
+
+  &__list__link {
+    @extend %title-20;
+  }
+}
